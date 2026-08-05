@@ -19,7 +19,7 @@
   display: block;         
   line-height: 1.7;         
   margin-top: 15vh;          
-  font-size: 4em;         
+  font-size: clamp(2rem, 10vw, 4em);         
 }
 
 /* Only for the typed button */

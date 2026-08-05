@@ -1,24 +1,25 @@
 "use client";
-import { Link } from "react-router-dom";
 import TextType from "./TextType";
 
 interface LearnMoreButtonProps {
   delay?: number;
 }
 
+// Applications are currently closed, so this renders as a greyed-out,
+// non-interactive label instead of a link to /join.
 const LearnMoreButton = ({ delay = 0 }: LearnMoreButtonProps) => {
   return (
     <TextType
-      as={Link}
-      to="/join"
+      as="span"
       text={["Join us →"]}
       typingSpeed={90}
       initialDelay={delay}
       pauseDuration={0}
       loop={false}
       showCursor={false}
-      className="cta-typed text-[#FA2139] underline underline-offset-2 hover:opacity-90 transition font-['Roboto_Mono']"
-      aria-label="Learn about us"
+      className="cta-typed text-[#5c5f6b] underline underline-offset-2 cursor-not-allowed font-['Roboto_Mono']"
+      aria-label="Join us (applications closed)"
+      title="applications closed"
     />
   );
 };

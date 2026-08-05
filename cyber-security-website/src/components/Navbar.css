@@ -47,6 +47,16 @@
   font-weight: 500;
 }
 
+.nav-link-disabled {
+  color: var(--color-gray);
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.nav-link-disabled:hover {
+  color: var(--color-gray);
+}
+
 .nav-link {
   display: inline-flex;
   gap: 0;

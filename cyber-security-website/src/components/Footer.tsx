@@ -5,7 +5,7 @@ import redGramLogo from "../assets/red_gram_logo.png";
 import linkLogo from "../assets/link_logo.png";
 
 type FooterProps = {
-  /** When true, adds a solid black background behind the footer (used on Home only). */
+  /** When true, adds a solid black background behind the footer so the global matrix rain does not show through. */
   darkBackground?: boolean;
 };
 
@@ -24,38 +24,62 @@ const Footer = ({ darkBackground = false }: FooterProps) => {
         <div className="w-full max-w-[500px] h-[200px] p-[10px]">
           <p className="text-[#FF3B3B] text-lg"> Connect </p>
           <p className="text-white">
-            Stay connected with the latest Cornell Cybersecurity Club news and
+            Stay connected with the latest Cyber@Cornell news and
             events
           </p>
           <div className="flex gap-10 mt-4">
-            <img
-              src={redDiscordLogo}
-              alt="Discord"
-              className="w-[40px] h-[40px]"
-            />
-            <img
-              src={redGramLogo}
-              alt="Instagram"
-              className="w-[40px] h-[40px]]"
-            />
-            <img
-              src={linkLogo}
-              alt="LinkedIn"
-              className="w-[40px] h-[40px]"
-            />
+            <a
+              href="https://discord.gg/5qbMGE97NE"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src={redDiscordLogo}
+                alt="Discord"
+                className="w-[40px] h-[40px]"
+              />
+            </a>
+            <a
+              href="https://www.instagram.com/cornellcyber/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src={redGramLogo}
+                alt="Instagram"
+                className="w-[40px] h-[40px]"
+              />
+            </a>
+            <a
+              href="https://www.linkedin.com/company/cornell-cybersecurity-club"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src={linkLogo}
+                alt="LinkedIn"
+                className="w-[40px] h-[40px]"
+              />
+            </a>
           </div>
         </div>
         <div className="w-full max-w-[500px] h-[200px] p-[10px] md:ml-10">
           <p className="text-[#FF3B3B] text-lg"> Join </p>
-          <Link to="/join">
-            <p className="text-white underline"> New member intake</p>
-          </Link>
+          <p
+            className="text-gray-500 cursor-not-allowed"
+            title="applications closed"
+          >
+            New member intake (closed)
+          </p>
         </div>
         <div className="w-full max-w-[500px] h-[200px] p-[10px]">
           <p className="text-[#FF3B3B] text-lg"> Contact </p>
-          <Link to="/people">
+          <Link to="/contact">
             <p className="text-white underline"> Contact Us</p>
           </Link>
+          <a href="mailto:cornellcyber@gmail.com">
+            <p className="text-white underline"> cornellcyber@gmail.com</p>
+          </a>
         </div>
       </div>
       <div className="text-center">

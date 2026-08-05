@@ -3,14 +3,14 @@ const Sponsorship = () => {
     "https://drive.google.com/file/d/1l6N3hVTod1jawR906S_-viu-ymoqXPbW/view?usp=sharing";
 
   return (
-    <div className="w-full bg-[#000000] text-[#E1DAD3] flex flex-col items-center pt-24 px-4 pb-24">
+    <div className="w-full text-[#E1DAD3] flex flex-col items-center pt-24 px-4 pb-24">
       <h1 className="text-3xl md:text-4xl tracking-wide mb-10 font-['Roboto_Mono']">
         Sponsorship
       </h1>
 
       <div className="w-11/12 md:w-3/5 lg:w-1/2 border border-[#E1DAD3] rounded-xl p-8 text-center">
         <p className="text-sm md:text-base leading-relaxed mb-6">
-          Interested in supporting Cornell Cybersecurity Club? Our sponsorship
+          Interested in supporting Cyber@Cornell? Our sponsorship
           packet includes information about our mission, events, and how your
           organization can get involved.
         </p>

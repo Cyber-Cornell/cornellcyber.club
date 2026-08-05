@@ -1,11 +1,10 @@
 "use client";
 import TextType from "../components/TextType";
-import MatrixRain from "../components/Matrix";
 import LearnMoreButton from "../components/LearnMoreButton";
 import CTF from "./CTF";
 
 const Home = () => {
-  const title = "Cornell Cybersecurity Club";
+  const title = "Cyber@Cornell";
   const titleTypingSpeed = 97;
   const buttonDelay = title.length * titleTypingSpeed + 80;
   // const sectionRef = useRef<HTMLElement>(null);
@@ -42,10 +41,6 @@ const Home = () => {
 
   return (
     <div>
-      <div className="absolute top-0 left-0 right-0 h-screen overflow-hidden z-0 pointer-events-none">
-        <MatrixRain fontSize={24} speed={0.3} fpsCap={60} />
-      </div>
-
       <section
         // ref={sectionRef}
         className="relative flex flex-col text-center mt-20 mx-auto z-10"

@@ -1,9 +1,8 @@
-import { Link } from "react-router-dom";
 import groupPhoto from "../assets/fa-25-teamphoto.jpeg";
 
 const About = () => {
   return (
-    <div className="w-full min-h-screen bg-[#000000] text-[#E1DAD3] flex flex-col items-center pt-20 overflow-x-hidden">
+    <div className="w-full min-h-screen text-[#E1DAD3] flex flex-col items-center pt-20 overflow-x-hidden">
       {/* Red box with the requested content */}
       <section className="w-full flex justify-center py-8 mb-8">
         <div className="bg-[#FA2136] rounded-xl px-10 py-12 text-center max-w-2xl w-full">
@@ -166,16 +165,19 @@ const About = () => {
         </div>
       </div>
 
-      <div className="w-full min-h-screen text-[#E1DAD3] flex flex-col items-center">
+      <div className="w-full text-[#E1DAD3] flex flex-col items-center">
         {/* --- JOIN SECTION --- */}
         <section className="w-full flex justify-center py-10">
           <div className="bg-[#FA2136] rounded-xl px-10 py-12 text-center max-w-2xl w-full">
             <h2 className="text-xl text-[#0A0A0A] tracking-wide mb-6">
               READY TO JOIN?
             </h2>
-            <Link to="/join" className="bg-[#D9D9D9] text-[#FA2136] px-6 py-2 rounded-full font-medium hover:bg-gray-200 transition">
+            <span
+              className="bg-gray-400 text-gray-700 px-6 py-2 rounded-full font-medium cursor-not-allowed inline-block"
+              title="applications closed"
+            >
               Join Us
-            </Link>
+            </span>
           </div>
         </section>
 

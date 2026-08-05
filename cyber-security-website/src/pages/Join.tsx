@@ -57,7 +57,7 @@ const Join = () => {
   });
 
   return (
-    <div className="w-full min-h-screen overflow-x-hidden flex flex-col items-center bg-black px-4">
+    <div className="w-full min-h-screen overflow-x-hidden flex flex-col items-center px-4">
       <h1 className="mt-8 md:mt-12 font-['Roboto_Mono'] text-[#E1DAD3] text-2xl md:text-4xl mb-4 md:mb-20 flex items-center justify-center gap-0.5">
         become a cybear?
         <span className="cursor-blink text-[#FA2139]">_</span>
