@@ -1,3 +1,12 @@
 # webdev-fa25
 
-This is the official repository for FA25: Cornell WebDev - Cornell Cybersecurity Club.
+Official website for Cyber@Cornell — React 19 + TypeScript + Vite + Tailwind 4, hosted on GitHub Pages.
+
+## Commands
+
+Run inside `cyber-security-website/`:
+
+- `npm install` — install dependencies
+- `npm run dev` — local dev server
+- `npm run build` — production build
+- `npm run deploy` — deploy to GitHub Pages
