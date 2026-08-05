@@ -1,4 +1,4 @@
-# webdev-fa25
+# cornellcyber.club
 
 Official website for Cyber@Cornell — React 19 + TypeScript + Vite + Tailwind 4, hosted on GitHub Pages.
 
