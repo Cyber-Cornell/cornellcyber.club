@@ -1,3 +1,10 @@
+import EventCard, { type ClubEvent } from "../components/EventCard";
+
+// Add entries here to list events — each one renders as an <EventCard />, and
+// a section only appears once its list is non-empty.
+const plannedEvents: ClubEvent[] = [];
+const archivedEvents: ClubEvent[] = [];
+
 const CTF = () => {
   return (
     // Full-width page breakout (keeps working even inside a max-w layout)
@@ -17,30 +24,30 @@ const CTF = () => {
         {/* Planned Events */}
         <h2 className="text-3xl mb-8 text-center">Planned Events</h2>
 
-        <div className="border border-gray-400 rounded-xl p-6 mb-20 text-center">
-          <p className="text-gray-400">no upcoming events — check back soon!</p>
-        </div>
+        {plannedEvents.length > 0 ? (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
+            {plannedEvents.map((event) => (
+              <EventCard key={event.name} {...event} />
+            ))}
+          </div>
+        ) : (
+          <div className="border border-gray-400 rounded-xl p-6 mb-20 text-center">
+            <p className="text-gray-400">no upcoming events — check back soon!</p>
+          </div>
+        )}
 
         {/* Archived Events */}
-        {/*
-        <h2 className="text-3xl mb-8 text-center">Archived Events</h2>
+        {archivedEvents.length > 0 && (
+          <>
+            <h2 className="text-3xl mb-8 text-center">Archived Events</h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="border border-gray-400 rounded-xl p-6">
-            <h3 className="text-red-400 text-lg font-bold">Name</h3>
-            <p className="text-sm text-gray-400 mb-4">6/7/25</p>
-            <p className="text-gray-300 mb-4">Description Here</p>
-            <div className="w-24 h-24 bg-gray-300" />
-          </div>
-
-          <div className="border border-gray-400 rounded-xl p-6">
-            <h3 className="text-red-400 text-lg font-bold">Name</h3>
-            <p className="text-sm text-gray-400 mb-4">6/7/25</p>
-            <p className="text-gray-300 mb-4">Description Here</p>
-            <div className="w-24 h-24 bg-gray-300" />
-          </div>
-        </div>
-        */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {archivedEvents.map((event) => (
+                <EventCard key={event.name} {...event} />
+              ))}
+            </div>
+          </>
+        )}
       </div>
     </div>
   );

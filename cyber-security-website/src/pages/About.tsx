@@ -1,4 +1,4 @@
-import groupPhoto from "../assets/fa-25-teamphoto.jpeg";
+import groupPhoto from "../assets/fa-25-teamphoto.webp";
 
 const About = () => {
   return (
@@ -27,7 +27,7 @@ const About = () => {
             exploitation to cryptography, reverse engineering, and more.
           </p>
         </div>
-        <img src={groupPhoto} alt="Picture here" className="w-[300px] h-[200px] ml-30 object-cover" />
+        <img src={groupPhoto} alt="Cyber@Cornell members, Fall 2025" className="w-[300px] h-[200px] ml-30 object-cover" />
       </div>
 
       <h2 className="text-3xl tracking-wide mb-8 mt-10 font-['Roboto_Mono']">
@@ -35,7 +35,6 @@ const About = () => {
       </h2>
       <div className="flex flex-col items-center mt-5 px-4">
         <div className="flex flex-col md:flex-row items-center justify-center gap-5 mt-2 w-full max-w-[800px]">
-          {/*<img src="" alt="Picture here" className="w-[80px] h-[80px] mr-30" />*/}
           <div className="w-full max-w-[500px] h-[180px] border-2 p-[10px] bg-[#E1DAD3] rounded-lg flex flex-col items-center">
             <div className="flex justify-center items-center w-[120px] h-[30px] border-2 border-black mt-2 bg-[#FF0000]/50">
               <p className="text-center text-black"> Education </p>
@@ -48,7 +47,6 @@ const About = () => {
               </p>
             </div>
           </div>
-          {/*<img src="" alt="Picture here" className="w-[80px] h-[80px] ml-30" />*/}
         </div>
       </div>
 
@@ -86,11 +84,6 @@ const About = () => {
 
         <div className="flex flex-col items-center mt-10">
           <div className="flex flex-col md:flex-row items-center justify-center gap-5 mt-2 w-full max-w-[800px]">
-            {/*<img
-              src=""
-              alt="Picture here"
-              className="w-[80px] h-[80px] mr-30"
-            />*/}
             <div className="w-full max-w-[500px] h-[200px] border-2 p-[10px] bg-[#E1DAD3] rounded-lg flex flex-col items-center">
               <div className="flex justify-center items-center w-[120px] h-[30px] border-2 border-black mt-2 bg-[#FF0000]/50">
                 <p className="text-center text-black"> Competition </p>
@@ -104,19 +97,9 @@ const About = () => {
                 </p>
               </div>
             </div>
-            {/*<img
-              src=""
-              alt="Picture here"
-              className="w-[80px] h-[80px] ml-30"
-            />*/}
           </div>
 
           <div className="flex flex-col md:flex-row items-center justify-center gap-5 mt-2 w-full max-w-[800px]">
-            {/*<img
-              src=""
-              alt="Picture here"
-              className="w-[80px] h-[80px] mr-30"
-            />*/}
             <div className="w-[500px] border-2 p-[10px] bg-[#E1DAD3] rounded-lg flex flex-col items-center mt-5">
               <div className="flex justify-center items-center w-[150px] h-[30px] border-2 border-black mt-2 bg-[#FF0000]/50">
                 <p className="text-center text-black"> What is a CTF? </p>
@@ -133,11 +116,6 @@ const About = () => {
                 </p>
               </div>
             </div>
-            {/*<img
-              src=""
-              alt="Picture here"
-              className="w-[80px] h-[80px] ml-30"
-            />*/}
           </div>
         </div>
 
@@ -223,10 +201,6 @@ const About = () => {
             ))}
           </div>
 
-          {/* Divider Line */}
-          {/*<div className="w-11/12 md:w-4/5 mt-24">
-            <div className="border-t border-[#FA2136]" />
-          </div>*/}
         </section>
       </div>
       

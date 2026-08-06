@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-import bearSticker from "../assets/bear_sticker.png";
-import redDiscordLogo from "../assets/red_discord_logo.png";
-import redGramLogo from "../assets/red_gram_logo.png";
-import linkLogo from "../assets/link_logo.png";
+import bearSticker from "../assets/bear_sticker.webp";
+import redDiscordLogo from "../assets/red_discord_logo.webp";
+import redGramLogo from "../assets/red_gram_logo.webp";
+import linkLogo from "../assets/link_logo.webp";
 
 type FooterProps = {
   /** When true, adds a solid black background behind the footer so the global matrix rain does not show through. */
