@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "./Navbar.css";
 import FlashingChar from "./FlashingChar";
-import TargetCursor from "./TargetCursor";
 
 const Navbar = () => {
   const location = useLocation();
@@ -48,7 +47,7 @@ const Navbar = () => {
             item.disabled ? (
               <span
                 key={item.path}
-                className="nav-link nav-link-disabled cursor-target"
+                className="nav-link nav-link-disabled"
                 title="applications closed"
               >
                 [{item.label}]
@@ -57,7 +56,7 @@ const Navbar = () => {
               <Link
                 key={item.path}
                 to={item.path}
-                className={`nav-link cursor-target ${
+                className={`nav-link ${
                   location.pathname === item.path ? "active" : ""
                 }`}
                 onClick={() => setIsMenuOpen(false)}
@@ -69,22 +68,13 @@ const Navbar = () => {
 
           <a
             href="https://blogs.cornellcyber.club/"
-            className="nav-link cursor-target"
+            className="nav-link"
             onClick={() => setIsMenuOpen(false)}
           >
             [education]
           </a>
         </div>
       </div>
-      {/* snappy target cursor for navbar items */}
-      <TargetCursor
-        targetSelector=".cursor-target"
-        spinDuration={0.8}
-        hideDefaultCursor={true}
-        parentSelector=".navbar"
-        hoverDuration={0.06}
-        parallaxOn={false}
-      />
     </nav>
   );
 };

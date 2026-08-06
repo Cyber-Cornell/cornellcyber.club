@@ -7,15 +7,18 @@ import linkLogo from "../assets/link_logo.webp";
 /** The solid background is what keeps the matrix rain from showing through. */
 const Footer = () => {
   return (
-    <footer className="w-full pb-10 z-1000 bg-black">
-      <hr className="border-t border-accent-bright my-4" />
-      <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row gap-5 justify-center mt-10">
+    <footer className="w-full pb-6 z-1000 bg-black">
+      <hr className="border-t border-accent-bright mb-6" />
+      {/* items-start keeps the columns at their natural height — they used to
+          be pinned to h-[200px], which padded the whole footer with dead
+          space on pages that had little content of their own. */}
+      <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-5 justify-center">
         <img
           src={bearSticker}
-          alt="image here"
-          className="w-[150px] h-[150px] ml-20 mr-20"
+          alt="Cyber@Cornell bear mascot"
+          className="w-[120px] h-[120px] shrink-0 md:mx-10"
         />
-        <div className="w-full max-w-[500px] h-[200px] p-[10px]">
+        <div className="w-full max-w-[500px] p-[10px]">
           <p className="text-accent-bright text-lg"> Connect </p>
           <p className="text-white">
             Stay connected with the latest Cyber@Cornell news and
@@ -57,7 +60,7 @@ const Footer = () => {
             </a>
           </div>
         </div>
-        <div className="w-full max-w-[500px] h-[200px] p-[10px] md:ml-10">
+        <div className="w-full max-w-[500px] p-[10px] md:ml-10">
           <p className="text-accent-bright text-lg"> Join </p>
           <p
             className="text-muted cursor-not-allowed"
@@ -66,7 +69,7 @@ const Footer = () => {
             New member intake (closed)
           </p>
         </div>
-        <div className="w-full max-w-[500px] h-[200px] p-[10px]">
+        <div className="w-full max-w-[500px] p-[10px]">
           <p className="text-accent-bright text-lg"> Contact </p>
           <Link to="/contact">
             <p className="text-white underline"> Contact Us</p>
@@ -76,9 +79,11 @@ const Footer = () => {
           </a>
         </div>
       </div>
-      <div className="text-center">
-        <p className="text-white text-center">© 2025. All rights reserved.</p>
-        <p className="text-white text-center">
+      {/* Boilerplate — set smaller than body copy so it reads as a footnote
+          rather than a third of the footer. */}
+      <div className="text-center text-sm text-cream/70 mt-8 px-4">
+        <p>© 2025. All rights reserved.</p>
+        <p>
           This organization is a registered student organization of Cornell
           University.
         </p>
@@ -86,7 +91,7 @@ const Footer = () => {
           href="https://hr.cornell.edu/about/workplace-rights/equal-education-and-employment"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-white text-center underline"
+          className="underline"
         >
           Equal Education and Employment
         </a>

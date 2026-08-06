@@ -49,8 +49,13 @@ body {
   overflow-x: clip;
 }
 
+/* Sticky-footer column: <main> takes all the leftover height, so on a page
+ * with little content the footer sits at the bottom of the viewport instead of
+ * riding up right under the text. */
 .app {
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   background-color: black;
   color: white;
 }

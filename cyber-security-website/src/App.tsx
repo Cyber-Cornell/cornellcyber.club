@@ -30,7 +30,7 @@ function App() {
         </div>
         <Navbar />
         {/* make main full width so content can stretch edge-to-edge */}
-        <main className="relative z-10 w-full">
+        <main className="relative z-10 w-full flex-1">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
