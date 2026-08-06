@@ -82,7 +82,7 @@ const Navbar = () => {
           )}
 
           <a
-            href="https://cornell-cybersecurity-club.github.io/"
+            href="https://blogs.cornellcyber.club/"
             className="nav-link"
             onClick={() => setIsMenuOpen(false)}
           >
