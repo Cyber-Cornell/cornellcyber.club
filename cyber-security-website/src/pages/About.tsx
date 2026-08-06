@@ -33,67 +33,33 @@ const About = () => {
       <h2 className="text-3xl tracking-wide mb-8 mt-10 font-['Roboto_Mono']">
         What We Do
       </h2>
-      <div className="flex flex-col items-center mt-5 px-4">
-        <div className="flex flex-col md:flex-row items-center justify-center gap-5 mt-2 w-full max-w-[800px]">
-          <div className="w-full max-w-[500px] h-[180px] border-2 p-[10px] bg-[#E1DAD3] rounded-lg flex flex-col items-center">
-            <div className="flex justify-center items-center w-[120px] h-[30px] border-2 border-black mt-2 bg-[#FF0000]/50">
-              <p className="text-center text-black"> Education </p>
-            </div>
-            <div>
-              <p className="text-center text-black mt-6">
-                {" "}
-                We host weekly technical workshops for our members to learn new
-                skills and put their knowledge to the test.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
+    
       <div className="w-full px-4">
-        <div className="flex flex-col md:flex-row gap-5 justify-center items-center mt-10">
-          <div className="relative w-full max-w-[500px] h-[200px] border-2 border-white p-[10px] rounded-lg">
-            <p className="absolute -top-[15px] bg-[#0A0A0A] text-[#FF3B3B] w-[40px] text-lg font-['Roboto_Mono']">
-              {" "}
-              NME{" "}
-            </p>
-            <p> New Member Education (NME) provides the basics for beginners in cybersecurity to get started in competing and finding what specializations they may be interested in through interactive CTF problems.</p>
-          </div>
-        </div>
+        <div className="flex flex-col items-center">
 
-        <div className="flex flex-col md:flex-row gap-5 justify-center items-center mt-10">
-          <div className="relative w-full max-w-[500px] h-[200px] border-2 border-white p-[10px] rounded-lg">
-            <p className="absolute -top-[15px] bg-[#0A0A0A] text-[#FF3B3B] w-[40px] text-lg font-['Roboto_Mono']">
-              {" "}
-              SWE{" "}
-            </p>
-            <p className="mt-3"> SWE team is the software development wing of Cornell Cyber that applies CS and design skills 
-                towards building tools to support operations. The SWE team is currently developing a command 
-                and control (C2) framework to support the RvB team in competitions and simulate attacks.</p>
-          </div>
-          <div className="relative w-full max-w-[500px] h-[200px] border-2 border-white p-[10px] rounded-lg">
-            <p className="absolute -top-[15px] bg-[#0A0A0A] text-[#FF3B3B] w-[120px] text-lg font-['Roboto_Mono']">
-              {" "}
-              CTF B Team{" "}
-            </p>
-            <p className="mt-9"> CTF B team is the bridge from NME to competing on our official competition team. Members go through learning 
-                materials, practice CTFs, and specialize in an area in CTF competition.</p>
-          </div>
-       </div>
-
-
-        <div className="flex flex-col items-center mt-10">
           <div className="flex flex-col md:flex-row items-center justify-center gap-5 mt-2 w-full max-w-[800px]">
             <div className="w-full max-w-[500px] h-[200px] border-2 p-[10px] bg-[#E1DAD3] rounded-lg flex flex-col items-center">
+              <div className="flex justify-center items-center w-[120px] h-[30px] border-2 border-black mt-2 bg-[#FF0000]/50">
+                <p className="text-center text-black"> Education </p>
+              </div>
+              <div>
+                <p className="text-center text-black mt-6">
+                  {" "}
+                  We host weekly technical workshops for our members to learn new skills and put their knowledge to the test.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="flex flex-col md:flex-row items-center justify-center gap-5 mt-2 w-full max-w-[800px]">
+            <div className="w-[500px] border-2 p-[10px] bg-[#E1DAD3] rounded-lg flex flex-col items-center mt-5">
               <div className="flex justify-center items-center w-[120px] h-[30px] border-2 border-black mt-2 bg-[#FF0000]/50">
                 <p className="text-center text-black"> Competition </p>
               </div>
               <div>
                 <p className="text-center text-black mt-6">
                   {" "}
-                  One of our greatest purposes is to compete in global hacking
-                  competitions known as CTFs. Members compete in practice
-                  competitions and real events.
+                  CTF competitions both give members practice in exploiting systems and are fun exercises. Our club regularly participates in competitions throughout the year.
                 </p>
               </div>
             </div>
@@ -105,9 +71,8 @@ const About = () => {
                 <p className="text-center text-black"> What is a CTF? </p>
               </div>
               <div className = "h-max">
-                <p className="text-center text-black">
+                <p className="text-center text-black mt-6">
                   {" "}
-          
                   "In cybersecurity, Capture the Flag (CTF) competitions are
                   exercises in which participants, either individually or as
                   part of a team, are challenged to find and exploit
@@ -117,28 +82,21 @@ const About = () => {
               </div>
             </div>
           </div>
+
         </div>
 
         <div className="flex flex-col md:flex-row gap-5 justify-center mt-10">
-          <div className="relative w-full max-w-[500px] h-[200px] border-2 border-white p-[10px] rounded-lg">
-            <p className="absolute -top-[15px] bg-[#0A0A0A] text-[#FF3B3B] w-[100px] text-lg font-['Roboto_Mono']">
-              {" "}
-              CTF Team{" "}
+          <div className="relative w-full max-w-[500px] h-[225px] border-2 border-white p-[10px] rounded-lg">
+            <p className="absolute -top-[15px] bg-[#0A0A0A] text-[#FF3B3B] w-[80px] text-lg font-['Roboto_Mono']">
+              {" "}VR Team{" "}
             </p>
-            <p className="mt-2"> The CTF Team competes in weekly jeopardy-style cybersecurity competitions. 
-                Typical challenges fall into these common categories: Website Exploitation, 
-                Reverse Engineering, Cryptography, and Binary Exploitation. The team also 
-                creates challenges to further expand their understanding with respect to their fields.</p>
+            <p className="mt-2"> The Vulnerability Research (VR) Team is dedicated towards discovering exploits and threats to computer infrastructure. The team is currently developing a fuzzer to find new vulerabilities. Members also compete in CTFs.</p>
           </div>
-          <div className="relative w-full max-w-[500px] h-[200px] border-2 border-white p-[10px] rounded-lg">
-            <p className="absolute -top-[15px] bg-[#0A0A0A] text-[#FF3B3B] w-[200px] text-lg font-['Roboto_Mono']">
-              {" "}
-              Red vs Blue Team{" "}
+          <div className="relative w-full max-w-[500px] h-[225px] border-2 border-white p-[10px] rounded-lg">
+            <p className="absolute -top-[15px] bg-[#0A0A0A] text-[#FF3B3B] w-[125px] text-lg font-['Roboto_Mono']">
+              {" "}SecDev Team{" "}
             </p>
-            <p className="mt-2"> The Red vs. Blue Team is our premier attack-and-defense unit, dedicated to understanding 
-                how real-world enterprise systems are compromised and how to defend them effectively. Members 
-                primarily take on defensive (Blue Team) roles since most of our competitions require us to act 
-                as the Blue Team under a simulated attack.</p>
+            <p className="mt-2"> The Security Development (SecDev) Team researches how networks are compromised and how to defend them effectively. The team is currently developing a security suite to monitor and protect enterprise infrastructure. Members may also participate competitions such as the National Collegiate Cyber Defense Competition (NCCDC).</p>
           </div>
         </div>
       </div>
