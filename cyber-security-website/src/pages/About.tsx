@@ -2,32 +2,6 @@ import ActivityCard from "../components/ActivityCard";
 import OutlinedCard from "../components/OutlinedCard";
 import groupPhoto from "../assets/fa-25-teamphoto.webp";
 
-const activities = [
-  {
-    title: "Education",
-    body: "We host weekly technical workshops for our members to learn new skills and put their knowledge to the test.",
-  },
-  {
-    title: "Competition",
-    body: "CTF competitions both give members practice in exploiting systems and are fun exercises. Our club regularly participates in competitions throughout the year.",
-  },
-  {
-    title: "What is a CTF?",
-    body: "\"In cybersecurity, Capture the Flag (CTF) competitions are exercises in which participants, either individually or as part of a team, are challenged to find and exploit vulnerabilities in a system to capture a 'flag' or piece of information\" (Filipkowski, 2024, p. 3).",
-  },
-];
-
-const teams = [
-  {
-    label: "VR Team",
-    body: "The Vulnerability Research (VR) Team is dedicated towards discovering exploits and threats to computer infrastructure. The team is currently developing a fuzzer to find new vulerabilities. Members also compete in CTFs.",
-  },
-  {
-    label: "SecDev Team",
-    body: "The Security Development (SecDev) Team researches how networks are compromised and how to defend them effectively. The team is currently developing a security suite to monitor and protect enterprise infrastructure. Members may also participate competitions such as the National Collegiate Cyber Defense Competition (NCCDC).",
-  },
-];
-
 /** Red banner used for the page title and the join call to action. */
 const banner = "w-full max-w-2xl bg-[#FA2136] rounded-xl px-10 py-12";
 
@@ -60,19 +34,40 @@ const About = () => {
         <h2 className="text-3xl tracking-wide font-['Roboto_Mono']">
           What We Do
         </h2>
-        {activities.map(({ title, body }) => (
-          <ActivityCard key={title} title={title}>
-            {body}
-          </ActivityCard>
-        ))}
+        <ActivityCard title="Education">
+          We host weekly technical workshops for our members to learn new skills
+          and put their knowledge to the test.
+        </ActivityCard>
+
+        <ActivityCard title="Competition">
+          CTF competitions both give members practice in exploiting systems and
+          are fun exercises. Our club regularly participates in competitions
+          throughout the year.
+        </ActivityCard>
+
+        <ActivityCard title="What is a CTF?">
+          "In cybersecurity, Capture the Flag (CTF) competitions are exercises in
+          which participants, either individually or as part of a team, are
+          challenged to find and exploit vulnerabilities in a system to capture a
+          'flag' or piece of information" (Filipkowski, 2024, p. 3).
+        </ActivityCard>
       </section>
 
       <div className="w-full max-w-[1050px] flex flex-col md:flex-row gap-6 justify-center items-stretch">
-        {teams.map(({ label, body }) => (
-          <OutlinedCard key={label} label={label} className="w-full max-w-[500px]">
-            {body}
-          </OutlinedCard>
-        ))}
+        <OutlinedCard label="VR Team" className="w-full max-w-[500px]">
+          The Vulnerability Research (VR) Team is dedicated towards discovering
+          exploits and threats to computer infrastructure. The team is currently
+          developing a fuzzer to find new vulnerabilities. Members also compete in
+          CTFs.
+        </OutlinedCard>
+
+        <OutlinedCard label="SecDev Team" className="w-full max-w-[500px]">
+          The Security Development (SecDev) Team researches how networks are
+          compromised and how to defend them effectively. The team is currently
+          developing a security suite to monitor and protect enterprise
+          infrastructure. Members may also participate in competitions such as the
+          National Collegiate Cyber Defense Competition (NCCDC).
+        </OutlinedCard>
       </div>
 
       {/* --- JOIN SECTION --- */}
