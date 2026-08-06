@@ -1,4 +1,3 @@
-"use client";
 import TextType from "./TextType";
 
 interface LearnMoreButtonProps {
@@ -17,7 +16,7 @@ const LearnMoreButton = ({ delay = 0 }: LearnMoreButtonProps) => {
       pauseDuration={0}
       loop={false}
       showCursor={false}
-      className="cta-typed text-[#5c5f6b] underline underline-offset-2 cursor-not-allowed font-['Roboto_Mono']"
+      className="cta-typed text-muted underline underline-offset-2 cursor-not-allowed font-['Roboto_Mono']"
       aria-label="Join us (applications closed)"
       title="applications closed"
     />

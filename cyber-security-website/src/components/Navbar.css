@@ -3,7 +3,7 @@
   justify-content: right;
   align-items: center;
   padding: 15px 15px 15px 30px;
-  background-color: var(--color-background);
+  background-color: black;
   background: transparent;
   position: relative;
   z-index: 50;
@@ -30,7 +30,7 @@
 }
 
 .nav-link {
-  color: var(--color-primary);
+  color: white;
   text-decoration: none;
   margin: 0 15px;
   font-family: "Roboto Mono", monospace;
@@ -39,7 +39,7 @@
 }
 
 .nav-link:hover {
-  color: var(--color-secondary);
+  color: var(--color-cream);
 }
 
 .nav-link.active {
@@ -48,13 +48,13 @@
 }
 
 .nav-link-disabled {
-  color: var(--color-gray);
+  color: var(--color-muted);
   opacity: 0.6;
   cursor: not-allowed;
 }
 
 .nav-link-disabled:hover {
-  color: var(--color-gray);
+  color: var(--color-muted);
 }
 
 .nav-link {
@@ -124,7 +124,7 @@
   width: 22px;
   height: 2px;
   margin: 4px 0;
-  background: var(--color-primary);
+  background: white;
   transition: transform 0.2s ease, opacity 0.2s ease;
 }
 

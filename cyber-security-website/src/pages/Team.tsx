@@ -1,4 +1,5 @@
 import TeamMemberCard, { type TeamMember } from "../components/TeamMemberCard";
+import PageHeading from "../components/PageHeading";
 import ramanHeadshot from "../assets/raman_headshot.webp";
 import jakobHeadshot from "../assets/jakob_headshot.webp";
 import camHeadshot from "../assets/cam_headshot2.webp";
@@ -100,10 +101,7 @@ const Team = () => {
   return (
     <div className="w-full min-h-screen overflow-hidden pb-24">
       <div className="text-center py-10 px-5 max-w-4xl mx-auto">
-        <h1 className="mt-12 font-['Roboto_Mono'] text-[#E1DAD3] text-4xl mb-10 flex items-center justify-center gap-0.5">
-          meet our team
-          <span className="cursor-blink text-[#FA2139]">_</span>
-        </h1>
+        <PageHeading>meet our team</PageHeading>
       </div>
 
       <div className={cardGrid}>
@@ -112,9 +110,7 @@ const Team = () => {
         ))}
       </div>
 
-      <h1 className="mt-12 font-['Roboto_Mono'] text-[#E1DAD3] text-4xl mb-10 flex items-center justify-center gap-0.5">
-        meet our advisors
-      </h1>
+      <PageHeading showCursor={false}>meet our advisors</PageHeading>
 
       <div className={cardGrid}>
         {advisors.map((advisor) => (

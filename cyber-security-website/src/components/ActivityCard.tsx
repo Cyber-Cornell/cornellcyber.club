@@ -8,12 +8,12 @@ type ActivityCardProps = {
 
 /** Light panel describing one thing the club does, headed by a red pill. */
 const ActivityCard = ({ title, children }: ActivityCardProps) => (
-  <div className="w-full max-w-[500px] rounded-lg bg-[#E1DAD3] p-4 flex flex-col items-center gap-4">
+  <div className="w-full max-w-[500px] rounded-lg bg-cream p-4 flex flex-col items-center gap-4">
     {/* Padding, not a fixed width, so the pill always fits its title. */}
-    <p className="border-2 border-black bg-[#FF0000]/50 px-3 py-1 text-center text-black">
+    <p className="border-2 border-ink bg-accent/50 px-3 py-1 text-center text-ink">
       {title}
     </p>
-    <p className="text-black leading-relaxed">{children}</p>
+    <p className="text-ink leading-relaxed">{children}</p>
   </div>
 );
 

@@ -8,7 +8,7 @@
   margin-left: 0.25rem;
   display: inline-block;
   opacity: 1;
-  color: #FA2139;
+  color: var(--color-accent);
 }
 
 .text-type__cursor--hidden {

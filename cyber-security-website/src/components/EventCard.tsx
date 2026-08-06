@@ -9,14 +9,14 @@ export type ClubEvent = {
 
 const EventCard = ({ name, date, description, image }: ClubEvent) => {
   return (
-    <div className="border border-gray-400 rounded-xl p-6">
-      <h3 className="text-red-400 text-lg font-bold">{name}</h3>
-      <p className="text-sm text-gray-400 mb-4">{date}</p>
-      <p className="text-gray-300 mb-4">{description}</p>
+    <div className="border border-muted rounded-xl p-6">
+      <h3 className="text-accent-bright text-lg font-bold">{name}</h3>
+      <p className="text-sm text-muted mb-4">{date}</p>
+      <p className="text-cream mb-4">{description}</p>
       {image ? (
         <img src={image} alt={name} className="w-24 h-24 object-cover" />
       ) : (
-        <div className="w-24 h-24 bg-gray-300" />
+        <div className="w-24 h-24 bg-muted" />
       )}
     </div>
   );

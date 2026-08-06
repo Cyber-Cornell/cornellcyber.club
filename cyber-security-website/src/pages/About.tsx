@@ -3,15 +3,15 @@ import OutlinedCard from "../components/OutlinedCard";
 import groupPhoto from "../assets/fa-25-teamphoto.webp";
 
 /** Red banner used for the page title and the join call to action. */
-const banner = "w-full max-w-2xl bg-[#FA2136] rounded-xl px-10 py-12";
+const banner = "w-full max-w-2xl bg-accent rounded-xl px-10 py-12";
 
 const About = () => {
   return (
     // One gap here sets the rhythm between every section, so no section
     // carries its own margins.
-    <div className="w-full min-h-screen text-[#E1DAD3] flex flex-col items-center gap-12 px-4 pt-20 pb-16 overflow-x-hidden">
+    <div className="w-full min-h-screen text-cream flex flex-col items-center gap-12 px-4 pt-20 pb-16 overflow-x-hidden">
       <section className={banner}>
-        <h2 className="text-4xl text-[#0A0A0A] font-['Roboto_Mono']">
+        <h2 className="text-4xl text-ink font-['Roboto_Mono']">
           What is the Cybersecurity Club?
         </h2>
       </section>
@@ -72,11 +72,11 @@ const About = () => {
 
       {/* --- JOIN SECTION --- */}
       <section className={`${banner} text-center`}>
-        <h2 className="text-3xl text-[#0A0A0A] tracking-wide mb-6">
+        <h2 className="text-3xl text-ink tracking-wide mb-6">
           READY TO JOIN?
         </h2>
         <span
-          className="bg-gray-400 text-gray-700 px-6 py-2 rounded-full font-medium cursor-not-allowed inline-block"
+          className="bg-muted text-ink px-6 py-2 rounded-full font-medium cursor-not-allowed inline-block"
           title="applications closed"
         >
           Join Us
@@ -84,7 +84,7 @@ const About = () => {
       </section>
 
       {/* --- GALLERY PLACEHOLDER SECTION — remove `hidden` when set --- */}
-      <section className="w-11/12 md:w-4/5 lg:w-3/5 h-64 bg-[#D9D9D9] text-[#0A0A0A] rounded-md flex items-center justify-center hidden">
+      <section className="w-11/12 md:w-4/5 lg:w-3/5 h-64 bg-cream text-ink rounded-md flex items-center justify-center hidden">
         <p className="tracking-wide text-sm">Gallery of pictures??</p>
       </section>
 
@@ -98,7 +98,7 @@ const About = () => {
           {[1, 2, 3].map((i) => (
             <div key={i} className="flex flex-col items-center gap-4">
               {/* Bracket Icon Container */}
-              <div className="relative flex items-center justify-center h-24 w-24 text-[#FA2136]">
+              <div className="relative flex items-center justify-center h-24 w-24 text-accent">
                 {/* left bracket */}
                 <span className="absolute left-0 top-1/2 -translate-y-1/2 text-4xl font-bold select-none">
                   [

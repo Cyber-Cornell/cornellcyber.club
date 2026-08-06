@@ -4,17 +4,11 @@ import redDiscordLogo from "../assets/red_discord_logo.webp";
 import redGramLogo from "../assets/red_gram_logo.webp";
 import linkLogo from "../assets/link_logo.webp";
 
-type FooterProps = {
-  /** When true, adds a solid black background behind the footer so the global matrix rain does not show through. */
-  darkBackground?: boolean;
-};
-
-const Footer = ({ darkBackground = false }: FooterProps) => {
+/** The solid background is what keeps the matrix rain from showing through. */
+const Footer = () => {
   return (
-    <footer
-      className={`w-full pb-10 z-1000 ${darkBackground ? "bg-black" : ""}`}
-    >
-      <hr className="border-t border-[#FF3B3B] my-4" />
+    <footer className="w-full pb-10 z-1000 bg-black">
+      <hr className="border-t border-accent-bright my-4" />
       <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row gap-5 justify-center mt-10">
         <img
           src={bearSticker}
@@ -22,7 +16,7 @@ const Footer = ({ darkBackground = false }: FooterProps) => {
           className="w-[150px] h-[150px] ml-20 mr-20"
         />
         <div className="w-full max-w-[500px] h-[200px] p-[10px]">
-          <p className="text-[#FF3B3B] text-lg"> Connect </p>
+          <p className="text-accent-bright text-lg"> Connect </p>
           <p className="text-white">
             Stay connected with the latest Cyber@Cornell news and
             events
@@ -64,16 +58,16 @@ const Footer = ({ darkBackground = false }: FooterProps) => {
           </div>
         </div>
         <div className="w-full max-w-[500px] h-[200px] p-[10px] md:ml-10">
-          <p className="text-[#FF3B3B] text-lg"> Join </p>
+          <p className="text-accent-bright text-lg"> Join </p>
           <p
-            className="text-gray-500 cursor-not-allowed"
+            className="text-muted cursor-not-allowed"
             title="applications closed"
           >
             New member intake (closed)
           </p>
         </div>
         <div className="w-full max-w-[500px] h-[200px] p-[10px]">
-          <p className="text-[#FF3B3B] text-lg"> Contact </p>
+          <p className="text-accent-bright text-lg"> Contact </p>
           <Link to="/contact">
             <p className="text-white underline"> Contact Us</p>
           </Link>

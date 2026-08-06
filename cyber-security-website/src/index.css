@@ -1,22 +1,34 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500;700&display=swap");
+@import "tailwindcss";
+
+/* Design tokens — the single source of truth for color.
+ *
+ * Declaring them in @theme also generates the matching Tailwind utilities, so
+ * `--color-accent` gives you text-accent, bg-accent, border-accent, accent/50,
+ * and so on. Reach for those instead of writing a hex into a component; that
+ * habit is how the palette drifted to seven near-identical reds.
+ */
+@theme {
+  /* club red — headings, links, focus rings */
+  --color-accent: #fa2139;
+  /* a lighter red that stays legible as small text on black */
+  --color-accent-bright: #ff3b3b;
+  /* body text on a dark background */
+  --color-cream: #e1dad3;
+  /* text sitting on top of a red or cream panel */
+  --color-ink: #0a0a0a;
+  /* disabled controls and secondary text */
+  --color-muted: #5c5f6b;
+}
 
 :root {
-  /* Global Color Variables */
-  --color-primary: #ffffff;
-  --color-secondary: #e1dad3;
-  --color-accent: #fa2139;
-  --color-background: #000000;
-  --color-gray: #5c5f6b;
-
-  /* Typography */
   font-family: "Roboto Mono", monospace;
   line-height: 1.5;
   font-weight: 400;
 
-  /* Theme */
   color-scheme: dark;
-  color: var(--color-primary);
-  background-color: var(--color-background);
+  color: white;
+  background-color: black;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -24,9 +36,38 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Ensure the page background covers the entire viewport and remove default body margin */
-html, body, #root {
+/* Cover the whole viewport and drop the default body margin. */
+html,
+body,
+#root {
   height: 100%;
   margin: 0;
-  background-color: var(--color-background);
+  background-color: black;
+}
+
+body {
+  overflow-x: clip;
+}
+
+.app {
+  min-height: 100vh;
+  background-color: black;
+  color: white;
+}
+
+/* The blinking underscore after a page heading. This lives in the global
+ * stylesheet on purpose: it used to be defined only in Join.css, which nothing
+ * imports, so the underscore silently stopped blinking everywhere else. */
+@keyframes cursor-blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+.cursor-blink {
+  animation: cursor-blink 1s ease-in-out infinite;
 }

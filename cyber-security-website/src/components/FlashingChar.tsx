@@ -14,7 +14,9 @@ const FlashingChar = ({
   character = "|",
   className = "",
   blinkDuration = 0.5,
-  color = "#FA2139",
+  // Only opacity is tweened below, so a CSS variable is safe here — gsap
+  // assigns this straight to style.color without parsing it.
+  color = "var(--color-accent)",
   startDelay = 0,
 }: FlashingCharProps) => {
   const charRef = useRef<HTMLSpanElement>(null);

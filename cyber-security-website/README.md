@@ -1,73 +1,40 @@
-# React + TypeScript + Vite
+# cyber-security-website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The Vite app behind [cornellcyber.club](https://cornellcyber.club). See the
+[repo README](../README.md) for commands and [IMAGES.md](../IMAGES.md) for how to
+add images.
 
-Currently, two official plugins are available:
+## Layout
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```
+src/
+  App.tsx          routes (HashRouter) + the fixed matrix-rain backdrop
+  index.css        design tokens — colors live here, see below
+  App.css          Tailwind entry point
+  pages/           one file per route
+  components/      everything reused across pages
+  assets/          images, all WebP/AVIF
+public/            copied to the site root verbatim (favicon)
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Colors
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Every color is a token defined once in `src/index.css` under `@theme`. Use the
+Tailwind class, not a hex:
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+| Token | Class | Use |
+|---|---|---|
+| `--color-accent` | `text-accent` / `bg-accent` / `border-accent` | the club red |
+| `--color-accent-bright` | `text-accent-bright` | the lighter red for labels on dark |
+| `--color-cream` | `text-cream` | body text on dark |
+| `--color-ink` | `text-ink` | text on top of a red or cream panel |
+| `--color-muted` | `text-muted` | disabled and secondary text |
+
+Adding a hex literal to a component is how the palette drifted to seven
+different reds last time. If a shade is genuinely missing, add a token.
+
+## Routes
+
+Defined in `App.tsx`. `/join` currently redirects to `/` because applications
+are closed — `pages/Join.tsx` is kept intact for when they reopen; restore it by
+pointing the route back at `<Join />`.

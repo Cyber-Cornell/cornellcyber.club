@@ -7,7 +7,6 @@ import About from "./pages/About";
 import Team from "./pages/Team";
 import Contact from "./pages/Contact";
 import Sponsorship from "./pages/Sponsorship.tsx";
-import "./App.css";
 import Footer from "./components/Footer.tsx";
 
 const ScrollToTop = () => {
@@ -23,7 +22,9 @@ function App() {
     <Router>
       <ScrollToTop />
       <div className="app">
-        {/* global matrix rain background — fixed full-viewport, behind all content */}
+        {/* Site-wide matrix rain — fixed full-viewport, behind all content.
+            Do not start this comment with the word "global": ESLint reads
+            `/* global ... *\/` as a directive and flags every word in it. */}
         <div className="fixed inset-0 z-0 pointer-events-none" aria-hidden="true">
           <MatrixRain fontSize={24} speed={0.3} fpsCap={60} />
         </div>
@@ -41,7 +42,7 @@ function App() {
           </Routes>
         </main>
         <div className="relative z-10">
-          <Footer darkBackground />
+          <Footer />
         </div>
       </div>
     </Router>

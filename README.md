@@ -10,3 +10,7 @@ Run inside `cyber-security-website/`:
 - `npm run dev` — local dev server
 - `npm run build` — production build
 - `npm run deploy` — deploy to GitHub Pages
+
+## Guides
+
+- [Adding images](IMAGES.md) — WebP export and compression, favicon regeneration

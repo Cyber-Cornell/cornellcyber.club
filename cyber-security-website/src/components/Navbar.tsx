@@ -2,23 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "./Navbar.css";
 import FlashingChar from "./FlashingChar";
-
-type TargetCursorProps = {
-  targetSelector: string;
-  spinDuration?: number;
-  hideDefaultCursor?: boolean;
-  parentSelector?: string;
-  hoverDuration?: number;
-  parallaxOn?: boolean;
-};
-
-/**
- * Minimal no-op TargetCursor placeholder to satisfy imports and types.
- * Replace with the real implementation in src/components/TargetCursor.tsx when available.
- */
-const TargetCursor = (_props: TargetCursorProps) => {
-  return null;
-};
+import TargetCursor from "./TargetCursor";
 
 const Navbar = () => {
   const location = useLocation();
@@ -64,7 +48,7 @@ const Navbar = () => {
             item.disabled ? (
               <span
                 key={item.path}
-                className="nav-link nav-link-disabled"
+                className="nav-link nav-link-disabled cursor-target"
                 title="applications closed"
               >
                 [{item.label}]
@@ -73,7 +57,9 @@ const Navbar = () => {
               <Link
                 key={item.path}
                 to={item.path}
-                className={`nav-link ${location.pathname === item.path ? "active" : ""}`}
+                className={`nav-link cursor-target ${
+                  location.pathname === item.path ? "active" : ""
+                }`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 [{item.label}]
@@ -83,7 +69,7 @@ const Navbar = () => {
 
           <a
             href="https://blogs.cornellcyber.club/"
-            className="nav-link"
+            className="nav-link cursor-target"
             onClick={() => setIsMenuOpen(false)}
           >
             [education]

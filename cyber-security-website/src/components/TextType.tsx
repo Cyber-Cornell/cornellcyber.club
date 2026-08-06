@@ -11,7 +11,7 @@ import "./TextType.css";
 
 interface TextTypeProps {
   text: string | string[];
-  as?: ComponentType<any> | string;
+  as?: ComponentType<Record<string, unknown>> | string;
   typingSpeed?: number;
   initialDelay?: number;
   pauseDuration?: number;
@@ -28,7 +28,8 @@ interface TextTypeProps {
   onSentenceComplete?: (text: string, index: number) => void;
   startOnVisible?: boolean;
   reverseMode?: boolean;
-  [key: string]: any;
+  /** Anything else (aria-*, title, …) is forwarded to the rendered element. */
+  [key: string]: unknown;
 }
 
 const TextType = ({
