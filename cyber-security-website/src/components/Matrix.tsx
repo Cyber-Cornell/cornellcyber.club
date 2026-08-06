@@ -34,6 +34,7 @@ export default function MatrixRain({
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const rafRef = useRef<number | null>(null);
   const lastFrameRef = useRef<number>(0);
+  const lastWidthRef = useRef<number>(0);
 
   useEffect(() => {
     const canvas = canvasRef.current!;
@@ -48,6 +49,24 @@ export default function MatrixRain({
       const dpr = Math.max(1, window.devicePixelRatio || 1);
       const { innerWidth: w, innerHeight: h } = window;
       const canvasHeight = maxHeight ? Math.min(h, maxHeight) : h;
+
+      // Ignore height-only resizes (e.g. mobile URL bar show/hide while
+      // scrolling): resizing the canvas wipes its bitmap, which reads as
+      // flicker. Real changes (rotation, window resize) also change width.
+      if (w === lastWidthRef.current) {
+        return;
+      }
+      lastWidthRef.current = w;
+
+      // Snapshot the current bitmap so a genuine resize doesn't flash blank.
+      let snapshot: HTMLCanvasElement | null = null;
+      if (canvas.width > 0 && canvas.height > 0) {
+        snapshot = document.createElement("canvas");
+        snapshot.width = canvas.width;
+        snapshot.height = canvas.height;
+        snapshot.getContext("2d")!.drawImage(canvas, 0, 0);
+      }
+
       cssWidth = w;
       cssHeight = canvasHeight;
       canvas.style.width = `${w}px`;
@@ -55,16 +74,30 @@ export default function MatrixRain({
       canvas.width = Math.floor(w * dpr);
       canvas.height = Math.floor(canvasHeight * dpr);
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+      if (snapshot) {
+        ctx.save();
+        ctx.setTransform(1, 0, 0, 1, 0, 0);
+        ctx.drawImage(snapshot, 0, 0);
+        ctx.restore();
+      }
+
       initColumns();
     };
 
-    let columns: number[] = [];
+    const columns: number[] = [];
     const columnWidth = fontSize;
     const initColumns = () => {
       const count = Math.ceil(window.innerWidth / columnWidth);
-      columns = new Array(count)
-        .fill(0)
-        .map(() => Math.floor(Math.random() * -50));
+      // Keep existing column positions across resizes and only grow/shrink
+      // the array to match the new width, so the pattern doesn't jump.
+      if (columns.length > count) {
+        columns.length = count;
+      } else {
+        while (columns.length < count) {
+          columns.push(Math.floor(Math.random() * -50));
+        }
+      }
     };
 
     const bgFade = 0.08;
