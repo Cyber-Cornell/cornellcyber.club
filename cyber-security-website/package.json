@@ -2,7 +2,7 @@
   "name": "cyber-security-website",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://cornell-cybersecurity-club.github.io/webdev-fa25",
+  "homepage": "https://cornellcyber.club",
   "type": "module",
   "scripts": {
     "predeploy": "npm run build",
