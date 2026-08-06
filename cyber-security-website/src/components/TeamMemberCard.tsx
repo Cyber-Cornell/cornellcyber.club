@@ -1,3 +1,4 @@
+import NotchedLabel from "./NotchedLabel";
 import mailIcon from "../assets/mail_icon2.webp";
 import linkIcon from "../assets/link2_icon.avif";
 
@@ -14,16 +15,6 @@ export type TeamMember = {
   tallPhoto?: boolean;
 };
 
-/**
- * The name and role labels sit on the card's border, so they need an explicit
- * width to punch a hole in it. The card font is monospace, so one character is
- * exactly 1ch — sizing off the text length keeps a long title from wrapping out
- * of its box without hand-tuning a pixel width per member.
- */
-const labelWidth = (text: string) => ({
-  width: `calc(${text.length}ch + 1rem + 2px)`,
-});
-
 const TeamMemberCard = ({
   name,
   role,
@@ -35,12 +26,7 @@ const TeamMemberCard = ({
 }: TeamMember) => {
   return (
     <div className="relative w-full max-w-[350px] min-h-[470px] border-2 border-white p-[10px] rounded-lg mt-8">
-      <p
-        className="absolute -top-[15px] bg-[#000000] text-white text-md font-['Roboto_Mono'] pl-2 pr-2"
-        style={labelWidth(name)}
-      >
-        {name}
-      </p>
+      <NotchedLabel className="text-white">{name}</NotchedLabel>
 
       <img
         src={headshot}
@@ -75,12 +61,12 @@ const TeamMemberCard = ({
         </div>
       )}
 
-      <p
-        className="absolute -bottom-[15px] left-3/4 -translate-x-1/2 bg-[#000000] text-white text-md font-['Roboto_Mono'] pl-2 pr-2"
-        style={labelWidth(role)}
+      <NotchedLabel
+        position="bottom"
+        className="left-3/4 -translate-x-1/2 text-white"
       >
         {role}
-      </p>
+      </NotchedLabel>
     </div>
   );
 };
