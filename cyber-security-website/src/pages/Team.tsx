@@ -1,9 +1,6 @@
 import TeamMemberCard, { type TeamMember } from "../components/TeamMemberCard";
 import PageHeading from "../components/PageHeading";
-import ramanHeadshot from "../assets/raman_headshot.webp";
 import jakobHeadshot from "../assets/jakob_headshot.webp";
-import camHeadshot from "../assets/cam_headshot2.webp";
-import parthHeadshot from "../assets/parth_headshot.webp";
 import billHeadshot from "../assets/bill_headshot3.webp";
 import busterHeadshot from "../assets/buster_headshot.webp";
 import jackHeadshot from "../assets/jack_headshot.webp";
@@ -13,12 +10,12 @@ import noahHeadshot from "../assets/noah_headshot.avif";
 
 const officers: TeamMember[] = [
   {
-    name: "Raman Khanal",
+    name: "Alexander Schneider",
     role: "President",
-    headshot: ramanHeadshot,
+    headshot: alexHeadshot,
     major: "Computer Science",
-    email: "rk677@cornell.edu",
-    linkedin: "https://www.linkedin.com/in/ramankhanal/",
+    email: "as4276@cornell.edu",
+    linkedin: "https://www.linkedin.com/in/alexander-schneider-95376a2b2/",
   },
   {
     name: "Jakob Nacanaynay",
@@ -27,22 +24,6 @@ const officers: TeamMember[] = [
     major: "ECE",
     email: "jn567@cornell.edu",
     linkedin: "https://www.linkedin.com/in/jakob-nacanaynay-a93706213",
-  },
-  {
-    name: "Cam Mazzacane",
-    role: "Treasurer",
-    headshot: camHeadshot,
-    major: "CS and Math",
-    email: "clm357@cornell.edu",
-    linkedin: "https://www.linkedin.com/in/cam-mazzacane",
-  },
-  {
-    name: "Parth Mittal",
-    role: "Education Officer",
-    headshot: parthHeadshot,
-    major: "Computer Science",
-    email: "pm653@cornell.edu",
-    linkedin: "https://www.linkedin.com/in/parth-mittal-o6/",
   },
   {
     name: "Bill Nguyen",
@@ -67,14 +48,6 @@ const officers: TeamMember[] = [
     major: "ILR",
     email: "jxb4@cornell.edu",
     linkedin: "https://www.linkedin.com/in/jack-britton-a93282245",
-  },
-  {
-    name: "Alexander Schneider",
-    role: "External Affairs",
-    headshot: alexHeadshot,
-    major: "Computer Science",
-    email: "as4276@cornell.edu",
-    linkedin: "https://www.linkedin.com/in/alexander-schneider-95376a2b2/",
   },
 ];
 
