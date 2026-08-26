@@ -79,3 +79,27 @@ body {
 .cursor-blink {
   animation: cursor-blink 1s ease-in-out infinite;
 }
+
+/* One-shot highlight when a team card is deep-linked. The card sets
+ * --flash-color so each team pulses in its own color. */
+@keyframes team-card-flash {
+  0%,
+  100% {
+    box-shadow: none;
+  }
+
+  25%,
+  65% {
+    box-shadow: 0 0 28px color-mix(in srgb, var(--flash-color, var(--color-accent)) 45%, transparent);
+  }
+}
+
+.team-card-flash {
+  animation: team-card-flash 1.6s ease-out 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .team-card-flash {
+    animation: none;
+  }
+}

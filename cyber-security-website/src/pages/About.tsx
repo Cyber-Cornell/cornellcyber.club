@@ -1,4 +1,5 @@
-import { Link } from "react-router-dom";
+import { useEffect, type CSSProperties } from "react";
+import { Link, useLocation } from "react-router-dom";
 import ActivityCard from "../components/ActivityCard";
 import OutlinedCard from "../components/OutlinedCard";
 import groupPhoto from "../assets/fa-25-teamphoto.webp";
@@ -6,7 +7,51 @@ import groupPhoto from "../assets/fa-25-teamphoto.webp";
 /** Red banner used for the page title and the join call to action. */
 const banner = "w-full max-w-2xl bg-accent rounded-xl px-10 py-12";
 
+/** Team cards that can be deep-linked, e.g. `#/about#vulnerability-research`. */
+const LINKABLE_TEAM_SECTIONS: readonly string[] = [
+  "security-development",
+  "vulnerability-research",
+];
+
+/** Small `#` affordance that makes a card's URL copyable. */
+const anchorLink = (id: string, label: string) => (
+  <Link
+    to={`/about#${id}`}
+    aria-label={`Link directly to the ${label} section`}
+    title="Link to this team"
+    className="absolute right-4 top-4 text-sm text-muted transition-colors hover:text-accent-bright focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
+  >
+    #
+  </Link>
+);
+
 const About = () => {
+  const { hash } = useLocation();
+
+  useEffect(() => {
+    if (!hash) return;
+    const id = hash.slice(1);
+    if (!LINKABLE_TEAM_SECTIONS.includes(id)) return;
+    // requestAnimationFrame so this runs after the app-wide ScrollToTop
+    // effect when navigating in from another page.
+    const frame = requestAnimationFrame(() => {
+      const target = document.getElementById(id);
+      if (!target) return;
+      const reduceMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)",
+      ).matches;
+      target.scrollIntoView({
+        behavior: reduceMotion ? "auto" : "smooth",
+        block: "start",
+      });
+      target.classList.add("team-card-flash");
+      window.setTimeout(
+        () => target.classList.remove("team-card-flash"),
+        1800,
+      );
+    });
+    return () => cancelAnimationFrame(frame);
+  }, [hash]);
   return (
     // One gap here sets the rhythm between every section, so no section
     // carries its own margins.
@@ -66,8 +111,13 @@ const About = () => {
         </div>
 
         <div className="grid grid-cols-1 items-stretch gap-6 lg:grid-cols-2">
-          <article className="overflow-hidden rounded-lg border-2 border-team-blue bg-black/85">
-            <header className="border-b border-team-blue/50 bg-team-blue/10 px-6 py-6">
+          <article
+            id="security-development"
+            className="overflow-hidden rounded-lg border-2 border-team-blue bg-black/85"
+            style={{ "--flash-color": "var(--color-team-blue)" } as CSSProperties}
+          >
+            <header className="relative border-b border-team-blue/50 bg-team-blue/10 px-6 py-6">
+              {anchorLink("security-development", "Security Development")}
               <p className="mb-2 text-xs font-bold uppercase tracking-[0.18em] text-team-blue-bright">
                 Blue team // build + defend
               </p>
@@ -136,8 +186,13 @@ const About = () => {
             </div>
           </article>
 
-          <article className="overflow-hidden rounded-lg border-2 border-accent bg-black/85">
-            <header className="border-b border-accent/50 bg-accent/10 px-6 py-6">
+          <article
+            id="vulnerability-research"
+            className="overflow-hidden rounded-lg border-2 border-accent bg-black/85"
+            style={{ "--flash-color": "var(--color-accent)" } as CSSProperties}
+          >
+            <header className="relative border-b border-accent/50 bg-accent/10 px-6 py-6">
+              {anchorLink("vulnerability-research", "Vulnerability Research")}
               <p className="mb-2 text-xs font-bold uppercase tracking-[0.18em] text-accent-bright">
                 Red team // find + exploit
               </p>
