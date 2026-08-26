@@ -19,7 +19,7 @@ const Footer = () => {
           className="w-[120px] h-[120px] shrink-0 md:mx-10"
         />
         <div className="w-full max-w-[500px] p-[10px]">
-          <p className="text-accent-bright text-lg"> Connect </p>
+          <p className="text-accent-bright text-lg">Connect</p>
           <p className="text-white">
             Stay connected with the latest Cyber@Cornell news and
             events
@@ -61,28 +61,28 @@ const Footer = () => {
           </div>
         </div>
         <div className="w-full max-w-[500px] p-[10px] md:ml-10">
-          <p className="text-accent-bright text-lg"> Join </p>
-          <p
-            className="text-muted cursor-not-allowed"
-            title="applications closed"
+          <p className="text-accent-bright text-lg">Join</p>
+          <Link
+            to="/join"
+            className="text-white underline underline-offset-2 transition-colors hover:text-accent-bright focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
           >
-            New member intake (closed)
-          </p>
+            New member intake (open) →
+          </Link>
         </div>
         <div className="w-full max-w-[500px] p-[10px]">
-          <p className="text-accent-bright text-lg"> Contact </p>
+          <p className="text-accent-bright text-lg">Contact</p>
           <Link to="/contact">
-            <p className="text-white underline"> Contact Us</p>
+            <span className="block text-white underline">Contact Us</span>
           </Link>
           <a href="mailto:cornellcyber@gmail.com">
-            <p className="text-white underline"> cornellcyber@gmail.com</p>
+            <span className="block text-white underline">cornellcyber@gmail.com</span>
           </a>
         </div>
       </div>
       {/* Boilerplate — set smaller than body copy so it reads as a footnote
           rather than a third of the footer. */}
       <div className="text-center text-sm text-cream/70 mt-8 px-4">
-        <p>© 2025. All rights reserved.</p>
+        <p>© {new Date().getFullYear()}. All rights reserved.</p>
         <p>
           This organization is a registered student organization of Cornell
           University.

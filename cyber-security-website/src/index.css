@@ -13,6 +13,9 @@
   --color-accent: #fa2139;
   /* a lighter red that stays legible as small text on black */
   --color-accent-bright: #ff3b3b;
+  /* defensive-security blue — SecDev and CCDC team identity */
+  --color-team-blue: #2f8fff;
+  --color-team-blue-bright: #61adff;
   /* body text on a dark background */
   --color-cream: #e1dad3;
   /* text sitting on top of a red or cream panel */

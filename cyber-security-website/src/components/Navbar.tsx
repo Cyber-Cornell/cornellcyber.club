@@ -7,10 +7,10 @@ const Navbar = () => {
   const location = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const navItems: { path: string; label: string; disabled?: boolean }[] = [
+  const navItems: { path: string; label: string; featured?: boolean }[] = [
+    { path: "/join", label: "join — apps open", featured: true },
     { path: "/", label: "home" },
     { path: "/about", label: "about" },
-    { path: "/join", label: "join", disabled: true },
     { path: "/team", label: "team" },
     { path: "/contact", label: "contact" },
     { path: "/sponsorship", label: "sponsorship" },
@@ -43,28 +43,18 @@ const Navbar = () => {
           id="navbar-menu"
           className={`navbar-links ${isMenuOpen ? "open" : ""}`}
         >
-          {navItems.map((item) =>
-            item.disabled ? (
-              <span
-                key={item.path}
-                className="nav-link nav-link-disabled"
-                title="applications closed"
-              >
-                [{item.label}]
-              </span>
-            ) : (
-              <Link
-                key={item.path}
-                to={item.path}
-                className={`nav-link ${
-                  location.pathname === item.path ? "active" : ""
-                }`}
-                onClick={() => setIsMenuOpen(false)}
-              >
-                [{item.label}]
-              </Link>
-            )
-          )}
+          {navItems.map((item) => (
+            <Link
+              key={item.path}
+              to={item.path}
+              className={`nav-link ${item.featured ? "nav-link-featured" : ""} ${
+                location.pathname === item.path ? "active" : ""
+              }`}
+              onClick={() => setIsMenuOpen(false)}
+            >
+              [{item.label}]
+            </Link>
+          ))}
 
           <a
             href="https://blogs.cornellcyber.club/"

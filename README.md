@@ -14,3 +14,4 @@ Run inside `cyber-security-website/`:
 ## Guides
 
 - [Adding images](IMAGES.md) — WebP export and compression, favicon regeneration
+- [Design system](DESIGN.md) — tokens, surfaces, buttons, motion, voice

@@ -8,7 +8,7 @@ const Sponsorship = () => {
     <div className="w-full text-cream flex flex-col items-center pt-10 px-4 pb-24">
       <PageHeading>sponsorship</PageHeading>
 
-      <div className="w-11/12 md:w-3/5 lg:w-1/2 border border-cream rounded-xl p-8 text-center">
+      <div className="w-11/12 md:w-3/5 lg:w-1/2 border-2 border-cream rounded-lg p-8 text-center">
         <p className="text-sm md:text-base leading-relaxed mb-6">
           Interested in supporting Cyber@Cornell? Our sponsorship
           packet includes information about our mission, events, and how your

@@ -34,7 +34,6 @@ export default function MatrixRain({
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const rafRef = useRef<number | null>(null);
   const lastFrameRef = useRef<number>(0);
-  const lastWidthRef = useRef<number>(0);
 
   useEffect(() => {
     const canvas = canvasRef.current!;
@@ -52,11 +51,12 @@ export default function MatrixRain({
 
       // Ignore height-only resizes (e.g. mobile URL bar show/hide while
       // scrolling): resizing the canvas wipes its bitmap, which reads as
-      // flicker. Real changes (rotation, window resize) also change width.
-      if (w === lastWidthRef.current) {
+      // flicker. This comparison must stay local to the effect: React Strict
+      // Mode mounts effects twice in development, and a cross-mount cached
+      // width would make the second mount skip column initialization entirely.
+      if (w === cssWidth && cssHeight > 0) {
         return;
       }
-      lastWidthRef.current = w;
 
       // Snapshot the current bitmap so a genuine resize doesn't flash blank.
       let snapshot: HTMLCanvasElement | null = null;

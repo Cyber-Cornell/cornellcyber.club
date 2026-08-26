@@ -113,7 +113,7 @@ const Contact = () => {
           <button
             type="submit"
             disabled={submitState === "sending"}
-            className="mt-2 border-2 border-accent rounded-md py-3 text-accent hover:bg-accent hover:text-ink transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="mt-2 border-2 border-accent rounded-full py-3 text-accent hover:bg-accent hover:text-ink transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {submitState === "sending" ? "sending..." : "send message"}
           </button>

@@ -1,9 +1,16 @@
-import { HashRouter as Router, Routes, Route, Navigate, useLocation } from "react-router-dom";
+import {
+  HashRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+  useLocation,
+} from "react-router-dom";
 import { useEffect } from "react";
 import Navbar from "./components/Navbar";
 import MatrixRain from "./components/Matrix";
 import Home from "./pages/Home";
 import About from "./pages/About";
+import Join from "./pages/Join";
 import Team from "./pages/Team";
 import Contact from "./pages/Contact";
 import Sponsorship from "./pages/Sponsorship.tsx";
@@ -34,11 +41,13 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
-            {/* applications are closed for now — /join is inaccessible */}
-            <Route path="/join" element={<Navigate to="/" replace />} />
+            <Route path="/join" element={<Join />} />
             <Route path="/team" element={<Team />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/sponsorship" element={<Sponsorship />} />
+            {/* Unknown hash paths redirect home instead of rendering a
+                blank body. */}
+            <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </main>
         <div className="relative z-10">
