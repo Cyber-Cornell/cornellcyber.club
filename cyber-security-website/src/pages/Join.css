@@ -145,27 +145,6 @@
   mix-blend-mode: screen;
 }
 
-.join-orbit {
-  position: absolute;
-  border: 1px solid color-mix(in srgb, var(--color-accent) 60%, transparent);
-  border-radius: 50%;
-}
-
-/* Concentric rings anchored on the same corner point (8+175 == 58+125). */
-.join-orbit-one {
-  width: 350px;
-  height: 350px;
-  right: 8px;
-  bottom: 8px;
-}
-
-.join-orbit-two {
-  width: 250px;
-  height: 250px;
-  right: 58px;
-  bottom: 58px;
-}
-
 .major-events {
   padding-top: clamp(4rem, 9vw, 7rem);
 }
@@ -341,20 +320,6 @@
     right: 0;
     bottom: 0;
     width: min(220px, 100%);
-  }
-
-  .join-orbit-one {
-    width: 220px;
-    height: 220px;
-    right: 0;
-    bottom: 0;
-  }
-
-  .join-orbit-two {
-    width: 150px;
-    height: 150px;
-    right: 35px;
-    bottom: 35px;
   }
 
   .major-events-heading {

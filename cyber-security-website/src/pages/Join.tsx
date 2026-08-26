@@ -31,8 +31,6 @@ const Join = () => {
         </div>
 
         <div className="join-hero-art" aria-hidden="true">
-          <div className="join-orbit join-orbit-one" />
-          <div className="join-orbit join-orbit-two" />
           <img src={cybear} alt="" />
         </div>
       </header>
