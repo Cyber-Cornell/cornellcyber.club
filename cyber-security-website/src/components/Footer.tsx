@@ -4,6 +4,39 @@ import redDiscordLogo from "../assets/red_discord_logo.webp";
 import redGramLogo from "../assets/red_gram_logo.webp";
 import linkLogo from "../assets/link_logo.webp";
 
+/** Opens the club calendar and offers to add it to the visitor's account. */
+const CALENDAR_URL =
+  "https://calendar.google.com/calendar/u/0?cid=Y183ZTVlNjhiODBiNThiZDQwMTA0ZDdhZmYzM2QzYzdkYjQwODg0YzRlNDk5Y2E3MDk4ZTA5YzJhZTUwZmFmMzk1QGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20";
+
+/** Drawn inline so it matches the red of the social logos without shipping a
+ * new binary asset. */
+const CalendarIcon = () => (
+  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+    <rect
+      x="3"
+      y="5"
+      width="18"
+      height="16"
+      rx="2"
+      stroke="var(--color-accent-bright)"
+      strokeWidth="2"
+    />
+    <path d="M3 9.5h18" stroke="var(--color-accent-bright)" strokeWidth="2" />
+    <path
+      d="M8 3v4M16 3v4"
+      stroke="var(--color-accent-bright)"
+      strokeWidth="2"
+      strokeLinecap="round"
+    />
+    <path
+      d="M7.5 13h3M13.5 13h3M7.5 17h3M13.5 17h3"
+      stroke="var(--color-accent-bright)"
+      strokeWidth="2"
+      strokeLinecap="round"
+    />
+  </svg>
+);
+
 /** The solid background is what keeps the matrix rain from showing through. */
 const Footer = () => {
   return (
@@ -57,6 +90,15 @@ const Footer = () => {
                 alt="LinkedIn"
                 className="w-[40px] h-[40px]"
               />
+            </a>
+            <a
+              href={CALENDAR_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Cyber@Cornell club calendar"
+              title="Club calendar"
+            >
+              <CalendarIcon />
             </a>
           </div>
         </div>
