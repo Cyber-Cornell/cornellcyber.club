@@ -9,31 +9,34 @@ const CALENDAR_URL =
   "https://calendar.google.com/calendar/u/0?cid=Y183ZTVlNjhiODBiNThiZDQwMTA0ZDdhZmYzM2QzYzdkYjQwODg0YzRlNDk5Y2E3MDk4ZTA5YzJhZTUwZmFmMzk1QGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20";
 
 /** Drawn inline so it matches the red of the social logos without shipping a
- * new binary asset. */
+ * new binary asset. The drawing is scaled to ~75% so its visual weight
+ * matches the logos, which carry their own padding inside the 40px box. */
 const CalendarIcon = () => (
   <svg width="40" height="40" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-    <rect
-      x="3"
-      y="5"
-      width="18"
-      height="16"
-      rx="2"
-      stroke="var(--color-accent-bright)"
-      strokeWidth="2"
-    />
-    <path d="M3 9.5h18" stroke="var(--color-accent-bright)" strokeWidth="2" />
-    <path
-      d="M8 3v4M16 3v4"
-      stroke="var(--color-accent-bright)"
-      strokeWidth="2"
-      strokeLinecap="round"
-    />
-    <path
-      d="M7.5 13h3M13.5 13h3M7.5 17h3M13.5 17h3"
-      stroke="var(--color-accent-bright)"
-      strokeWidth="2"
-      strokeLinecap="round"
-    />
+    <g transform="translate(3 3) scale(0.75)">
+      <rect
+        x="3"
+        y="5"
+        width="18"
+        height="16"
+        rx="2"
+        stroke="var(--color-accent-bright)"
+        strokeWidth="2"
+      />
+      <path d="M3 9.5h18" stroke="var(--color-accent-bright)" strokeWidth="2" />
+      <path
+        d="M8 3v4M16 3v4"
+        stroke="var(--color-accent-bright)"
+        strokeWidth="2"
+        strokeLinecap="round"
+      />
+      <path
+        d="M7.5 13h3M13.5 13h3M7.5 17h3M13.5 17h3"
+        stroke="var(--color-accent-bright)"
+        strokeWidth="2"
+        strokeLinecap="round"
+      />
+    </g>
   </svg>
 );
 
@@ -57,7 +60,7 @@ const Footer = () => {
             Stay connected with the latest Cyber@Cornell news and
             events
           </p>
-          <div className="flex gap-10 mt-4">
+          <div className="flex flex-wrap gap-6 md:gap-10 mt-4">
             <a
               href="https://discord.gg/5qbMGE97NE"
               target="_blank"
