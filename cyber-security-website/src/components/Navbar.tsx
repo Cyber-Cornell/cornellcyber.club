@@ -61,7 +61,7 @@ const Navbar = () => {
             className="nav-link"
             onClick={() => setIsMenuOpen(false)}
           >
-            [education]
+            [blogs]
           </a>
         </div>
       </div>
