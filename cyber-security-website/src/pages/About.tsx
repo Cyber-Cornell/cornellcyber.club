@@ -210,10 +210,10 @@ const About = () => {
                   Vulnerability Research
                 </h4>
                 <p>
-                  We are Cornell&apos;s first and only vulnerability research group.
+                  We are Cornell&apos;s first and only student-led vulnerability research group.
                   We break software through reverse engineering, binary
                   exploitation, and fuzzing—and teach beginners from the ground up.
-                  No prior experience is necessary.
+                  No prior research experience is necessary.
                 </p>
               </section>
 
