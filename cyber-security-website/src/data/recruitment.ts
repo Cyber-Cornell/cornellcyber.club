@@ -21,14 +21,14 @@ export const RECRUITMENT_EVENTS: RecruitmentEvent[] = [
     title: "Info Session #1",
     date: "September 8",
     time: "5:30 PM",
-    location: "Location TBA",
+    location: "Hollister 306",
     description: "Meet the team, hear about our projects, and learn what the application process looks like.",
   },
   {
     title: "Info Session #2",
     date: "September 10",
     time: "5:30 PM",
-    location: "Location TBA",
+    location: "Hollister 368",
     description: "A second chance to meet the team, explore our work, and ask questions before applying.",
   },
   {
