@@ -70,6 +70,12 @@ const Join = () => {
             </li>
           ))}
         </ol>
+
+        {RECRUITMENT_EVENTS.length === 0 && (
+          <p className="text-cream border border-accent/40 rounded-xl p-6 text-center">
+            we will host events later in the semester, check back later!
+          </p>
+        )}
       </section>
     </div>
   );
