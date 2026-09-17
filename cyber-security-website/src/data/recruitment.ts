@@ -8,27 +8,27 @@ export type RecruitmentEvent = {
   location?: string;
   description: string;
   active?: boolean;
+  current?: boolean;
 };
 
 export const RECRUITMENT_EVENTS: RecruitmentEvent[] = [
   {
     title: "Applications are open",
-    date: "Today",
+    date: "August 26",
     description: "Applications are live. Tell us what excites you about cybersecurity and what you want to build with us.",
-    active: true,
   },
   {
     title: "Info Session #1",
     date: "September 8",
     time: "5:30 PM",
-    location: "Location TBA",
+    location: "Hollister 368",
     description: "Meet the team, hear about our projects, and learn what the application process looks like.",
   },
   {
     title: "Info Session #2",
     date: "September 10",
     time: "5:30 PM",
-    location: "Location TBA",
+    location: "Hollister 306",
     description: "A second chance to meet the team, explore our work, and ask questions before applying.",
   },
   {
@@ -37,8 +37,9 @@ export const RECRUITMENT_EVENTS: RecruitmentEvent[] = [
     description: "We interview selected applicants on a rolling basis throughout the window — apply early to hear back sooner.",
   },
   {
-    title: "Applications close",
-    date: "September 16",
-    description: "Submit your application by September 16 to be considered for this recruitment cycle.",
+    title: "Applications are closed",
+    date: "Today",
+    description: "Applications have closed. Please email us if you are still interested in joinning",
+    current: true,
   },
 ];

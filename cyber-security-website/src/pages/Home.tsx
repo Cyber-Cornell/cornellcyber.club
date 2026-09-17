@@ -12,9 +12,9 @@ const plannedEvents: ClubEvent[] = RECRUITMENT_EVENTS.map((event) => ({
   name: event.title,
   date: [event.date, event.time, event.location].filter(Boolean).join(" // "),
   description: event.description,
-  featured: event.active,
-  href: event.active ? APPLICATION_URL : undefined,
-  linkLabel: event.active ? "Apply now" : undefined,
+  featured: event.current,
+  href: event.active && event.current ? APPLICATION_URL : undefined,
+  linkLabel: event.active && event.current ? "Apply now" : undefined,
 }));
 const Home = () => {
   // Hold the button back until the title has finished typing itself out.
@@ -28,20 +28,17 @@ const Home = () => {
         <div className="mb-8 w-full max-w-2xl rounded-xl border-2 border-accent bg-black/85 p-5 md:flex md:items-center md:justify-between md:gap-6 md:p-6">
           <div className="mb-4 text-left md:mb-0">
             <p className="mb-1 flex items-center gap-2 text-sm font-bold uppercase tracking-[0.16em] text-accent-bright">
-              <span className="h-2.5 w-2.5 animate-pulse rounded-full bg-accent" aria-hidden="true" />
-              Applications are open
+              Applications are closed
             </p>
             <p className="text-sm text-cream md:text-base">
-              Join Cyber@Cornell. Applications close September 16.
+              Applications have closed. If you are still interested in joining, please reach out to us via email.
             </p>
           </div>
           <a
-            href={APPLICATION_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+            href="mailto:cornellcyber@gmail.com"
             className="inline-flex shrink-0 items-center justify-center rounded-full bg-accent px-6 py-3 font-bold text-ink transition-transform hover:scale-105 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
           >
-            Apply now <span className="ml-2" aria-hidden="true">↗</span>
+            Email us <span className="ml-2" aria-hidden="true">→</span>
           </a>
         </div>
         <TextType

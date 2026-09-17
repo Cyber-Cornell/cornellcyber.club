@@ -8,7 +8,7 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navItems: { path: string; label: string; featured?: boolean }[] = [
-    { path: "/join", label: "join — apps open", featured: true },
+    { path: "/join", label: "applications closed", featured: true },
     { path: "/", label: "home" },
     { path: "/about", label: "about" },
     { path: "/team", label: "team" },

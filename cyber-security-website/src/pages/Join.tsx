@@ -8,8 +8,7 @@ const Join = () => {
       <header className="join-hero">
         <div className="join-hero-copy">
           <p className="join-status">
-            <span className="join-status-dot" aria-hidden="true" />
-            Applications are open
+            Applications are closed
           </p>
           <h1>
             become a <span>cybear.</span>
@@ -17,15 +16,13 @@ const Join = () => {
           </h1>
           <p className="join-intro">
             Learn, build, and break things with Cornell&apos;s cybersecurity community.
-            Applications are open now through September 16.
+            Applications are closed. Email us if you are still interested in joinning
           </p>
           <a
             className="join-apply-button"
-            href={APPLICATION_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+            href="mailto:cornellcyber@gmail.com"
           >
-            Start your application <span aria-hidden="true">↗</span>
+            Email us <span aria-hidden="true">→</span>
           </a>
           <p className="join-deadline">Deadline // September 16</p>
         </div>
@@ -46,7 +43,7 @@ const Join = () => {
 
         <ol className="recruitment-timeline">
           {RECRUITMENT_EVENTS.map((event, index) => (
-            <li className={`recruitment-event ${event.active ? "is-active" : ""}`} key={event.title}>
+            <li className={`recruitment-event ${event.current ? "is-active" : ""}`} key={event.title}>
               <div className="event-marker" aria-hidden="true">
                 {String(index + 1).padStart(2, "0")}
               </div>
