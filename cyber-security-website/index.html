@@ -2,6 +2,16 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <script>
+      // GitHub Pages SPA fallback: 404.html stashes the requested URL in
+      // sessionStorage before redirecting here; restore it before React
+      // mounts so deep links land on the right route with a clean path.
+      if (sessionStorage.redirect) {
+        var target = sessionStorage.redirect;
+        delete sessionStorage.redirect;
+        history.replaceState(null, "", target);
+      }
+    </script>
     <link rel="icon" type="image/png" href="/logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta

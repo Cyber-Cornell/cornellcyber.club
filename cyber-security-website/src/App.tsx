@@ -1,5 +1,5 @@
 import {
-  HashRouter as Router,
+  BrowserRouter as Router,
   Routes,
   Route,
   Navigate,
@@ -45,7 +45,7 @@ function App() {
             <Route path="/team" element={<Team />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/sponsorship" element={<Sponsorship />} />
-            {/* Unknown hash paths redirect home instead of rendering a
+            {/* Unknown paths redirect home instead of rendering a
                 blank body. */}
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>

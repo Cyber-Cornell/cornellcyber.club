@@ -1,0 +1,42 @@
+<!doctype html>
+<!--
+  Clean-path support for GitHub Pages.
+
+  GitHub Pages serves this file for every unknown path, so deep links like
+  /about or /connect (the path encoded on printed QR codes) would otherwise
+  404. Stash the full URL in sessionStorage, bounce to /, and let the
+  restore script in index.html put the path back before the app mounts.
+
+  DO NOT DELETE THIS FILE — printed QRs can never be changed.
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>cornellcyber.club</title>
+    <meta name="robots" content="noindex" />
+    <style>
+      html,
+      body {
+        margin: 0;
+        height: 100%;
+        background: #000;
+        color: #e1dad3;
+        font-family: "Roboto Mono", ui-monospace, monospace;
+        display: grid;
+        place-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <p>redirecting_</p>
+    <script>
+      (function () {
+        sessionStorage.redirect = location.pathname + location.search;
+        location.replace("/");
+      })();
+    </script>
+    <noscript>
+      <a href="/">go to cornellcyber.club</a>
+    </noscript>
+  </body>
+</html>
