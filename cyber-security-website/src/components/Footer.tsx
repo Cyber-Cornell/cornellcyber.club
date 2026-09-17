@@ -111,7 +111,7 @@ const Footer = () => {
             to="/join"
             className="text-white underline underline-offset-2 transition-colors hover:text-accent-bright focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
           >
-            New member intake (open) →
+            New member intake (closed)
           </Link>
         </div>
         <div className="w-full max-w-[500px] p-[10px]">
