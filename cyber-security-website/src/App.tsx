@@ -44,7 +44,8 @@ function App() {
             <Route path="/join" element={<Join />} />
             <Route path="/team" element={<Team />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/sponsorship" element={<Sponsorship />} />
+            <Route path="/sponsors" element={<Sponsorship />} />
+            <Route path="/sponsorship" element={<Navigate to="/sponsors" replace />} />
             {/* Unknown paths redirect home instead of rendering a
                 blank body. */}
             <Route path="*" element={<Navigate to="/" replace />} />

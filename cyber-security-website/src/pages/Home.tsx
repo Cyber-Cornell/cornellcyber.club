@@ -2,6 +2,7 @@ import TextType from "../components/TextType";
 import LearnMoreButton from "../components/LearnMoreButton";
 import EventCard, { type ClubEvent } from "../components/EventCard";
 import { RECRUITMENT_EVENTS } from "../data/recruitment";
+import SponsorAnnouncement from "../components/SponsorAnnouncement";
 
 const title = "Cyber@Cornell";
 const titleTypingSpeed = 97;
@@ -22,7 +23,7 @@ const Home = () => {
     <div className="w-full">
       {/* Hero — sized to the viewport rather than a magic pixel offset, so the
           events below start just past the fold on any screen. */}
-      <section className="flex flex-col items-center justify-center text-center min-h-[80vh] px-4">
+      <section className="flex flex-col items-center justify-start text-center min-h-[80vh] px-4 pt-[8vh] pb-12">
         <div className="mb-8 w-full max-w-2xl rounded-lg border border-accent/70 bg-black/75 px-5 py-4">
           <div className="text-left">
             <p className="mb-1 text-xs font-semibold uppercase tracking-[0.14em] text-accent">
@@ -39,6 +40,7 @@ const Home = () => {
               .
             </p>
           </div>
+          <SponsorAnnouncement />
         </div>
         <TextType
           text={[title]}

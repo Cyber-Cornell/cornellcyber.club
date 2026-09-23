@@ -1,0 +1,159 @@
+.sponsor-dropdown {
+  display: grid;
+  animation: sponsor-expand 850ms cubic-bezier(0.22, 1, 0.36, 1) 1.5s both;
+}
+
+.sponsor-dropdown-clip {
+  min-height: 0;
+  overflow: hidden;
+  padding-inline: 4px;
+  margin-inline: -4px;
+}
+
+.sponsor-announcement {
+  --sheen-start: 2.35s;
+  --glint-start: 3.12s;
+  overflow: hidden;
+  border-top-color: color-mix(in srgb, white 30%, transparent);
+  background: linear-gradient(115deg, transparent, color-mix(in srgb, white 4%, transparent), transparent);
+  animation: sponsor-arrive 650ms ease-out 1.65s both;
+  transition: border-color 200ms ease;
+}
+
+.sponsor-announcement::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    110deg,
+    transparent 33%,
+    color-mix(in srgb, white 8%, transparent) 44%,
+    color-mix(in srgb, white 24%, transparent) 48%,
+    color-mix(in srgb, white 80%, transparent) 49.5%,
+    color-mix(in srgb, white 18%, transparent) 50.5%,
+    transparent 55%
+  );
+  opacity: 0;
+  pointer-events: none;
+  animation: sponsor-sheen 1s cubic-bezier(0.55, 0, 0.15, 1) var(--sheen-start) both;
+}
+
+/* The divider briefly catches light along with the moving reflection. */
+.sponsor-announcement::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, white 85%, transparent);
+  opacity: 0;
+  pointer-events: none;
+  transform-origin: right;
+  animation: sponsor-edge 1s ease-out var(--sheen-start) both;
+}
+
+.sponsor-reflection {
+  position: absolute;
+  z-index: 2;
+  right: 38px;
+  top: 50%;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+.sponsor-glint,
+.sponsor-halo {
+  position: absolute;
+  opacity: 0;
+}
+
+.sponsor-glint {
+  width: 76px;
+  height: 48px;
+  left: -38px;
+  top: -24px;
+  animation: sponsor-glint 650ms cubic-bezier(0.16, 1, 0.3, 1) var(--glint-start) both;
+}
+
+.sponsor-glint::before,
+.sponsor-glint::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: white;
+  clip-path: polygon(
+    50% 0%, 53% 43%, 100% 50%, 53% 54%,
+    50% 100%, 47% 54%, 0% 50%, 47% 43%
+  );
+}
+
+.sponsor-glint::after {
+  transform: rotate(45deg) scale(0.45);
+  opacity: 0.6;
+}
+
+.sponsor-halo {
+  width: 64px;
+  height: 64px;
+  left: -32px;
+  top: -32px;
+  background: radial-gradient(circle, white 0%, color-mix(in srgb, white 45%, transparent) 5%, color-mix(in srgb, white 12%, transparent) 22%, transparent 65%);
+  animation: sponsor-afterglow 900ms ease-out var(--glint-start) both;
+}
+
+.sponsor-signal {
+  background: linear-gradient(135deg, white, var(--color-cream) 45%, var(--color-muted));
+  animation: sponsor-connect 1s ease-out var(--sheen-start) both;
+}
+
+@keyframes sponsor-arrive {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes sponsor-expand {
+  from { grid-template-rows: 0fr; visibility: hidden; }
+  to { grid-template-rows: 1fr; visibility: visible; }
+}
+
+@keyframes sponsor-sheen {
+  0% { transform: translateX(-100%); opacity: 0; }
+  15%, 80% { opacity: 1; }
+  100% { transform: translateX(100%); opacity: 0; }
+}
+
+@keyframes sponsor-connect {
+  0%, 100% { box-shadow: none; }
+  50% { box-shadow: 0 0 18px color-mix(in srgb, white 45%, transparent); }
+}
+
+@keyframes sponsor-glint {
+  0% { opacity: 0; transform: rotate(-12deg) scale(0.05); }
+  12% { opacity: 1; transform: rotate(-8deg) scale(1); }
+  28% { opacity: 1; transform: rotate(0deg) scale(0.72); }
+  100% { opacity: 0; transform: rotate(12deg) scale(0.02); }
+}
+
+@keyframes sponsor-afterglow {
+  0% { opacity: 0; transform: scale(0.2); }
+  10% { opacity: 0.9; transform: scale(1); }
+  100% { opacity: 0; transform: scale(1.4); }
+}
+
+@keyframes sponsor-edge {
+  0%, 100% { opacity: 0; transform: scaleX(0.1); }
+  65% { opacity: 0.8; transform: scaleX(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sponsor-dropdown,
+  .sponsor-announcement,
+  .sponsor-announcement::before,
+  .sponsor-announcement::after,
+  .sponsor-glint,
+  .sponsor-halo,
+  .sponsor-signal {
+    animation: none;
+    transition: none;
+  }
+}
