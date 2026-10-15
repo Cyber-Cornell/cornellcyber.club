@@ -9,12 +9,20 @@ const titleTypingSpeed = 97;
 
 // Recruitment dates share their source with the Join page so status, times,
 // and locations cannot drift between the two pages.
-const plannedEvents: ClubEvent[] = RECRUITMENT_EVENTS.map((event) => ({
-  name: event.title,
-  date: [event.date, event.time, event.location].filter(Boolean).join(" // "),
-  description: event.description,
-  featured: event.current,
-}));
+const plannedEvents: ClubEvent[] = [
+  {
+    name: "The Lifecycle of a Vulnerability",
+    date: "October 19 // 6–7 PM // Malott 203",
+    description:
+      "Join Jay Warne, Co-Founder of RSTCON, and the Cornell Cyber Club for a technical talk following the life of a vulnerability from invention to 0-day, exploit development, and delivery. Learn how systems-level knowledge helps you defend against threats, debug complex software, and build more secure systems.",
+  },
+  ...RECRUITMENT_EVENTS.map((event) => ({
+    name: event.title,
+    date: [event.date, event.time, event.location].filter(Boolean).join(" // "),
+    description: event.description,
+    featured: event.current,
+  })),
+];
 const Home = () => {
   // Hold the button back until the title has finished typing itself out.
   const buttonDelay = title.length * titleTypingSpeed + 80;
