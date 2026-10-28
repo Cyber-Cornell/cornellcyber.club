@@ -2,7 +2,7 @@ import PageHeading from "../components/PageHeading";
 
 const Sponsorship = () => {
   const pdfUrl =
-    "https://drive.google.com/file/d/1l6N3hVTod1jawR906S_-viu-ymoqXPbW/view?usp=sharing";
+    "https://drive.google.com/file/d/1vhd7tSKEujSRDp2pufSK7JLAcqZmU0l0/view?usp=drive_link";
 
   return (
     <div className="w-full text-cream flex flex-col items-center pt-10 px-4 pb-24">
